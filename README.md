@@ -1,5 +1,9 @@
 # battle-calculator-ui
-User interface for battle-calculator
+[![Netlify Status](https://api.netlify.com/api/v1/badges/aa6fc5ff-8005-4225-8c4f-4c001fdbc679/deploy-status)](https://app.netlify.com/sites/battle-calculator-cemderin-com/deploys)
+
+User interface for battle-calculator. 
+
+Live Demo: [http://battle-calculator.cemderin.com](http://battle-calculator.cemderin.com)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

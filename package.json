@@ -1,6 +1,6 @@
 {
   "name": "battle-calculator-ui",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "@cemderin/battle-calculator": "^0.0.5",

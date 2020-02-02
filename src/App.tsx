@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import BSString from '@cemderin/battlescribe-to-json/dist/src/BSString';
-import { Model } from '@cemderin/battle-calculator';
+import { Model, Phase } from '@cemderin/battle-calculator';
 
 const App: React.FC = () => {
   const [attackers, setAttackers] = useState<Model[]>([]);
@@ -22,6 +22,23 @@ const App: React.FC = () => {
     }
   }
 
+  let results: Array<any> = [];
+  for(let attackingModel of attackers) {
+    for(let defendingModel of defenders) {
+      const phase = new Phase();
+      phase.attacker = attackingModel;
+      phase.defender = defendingModel;
+
+      results.push({
+        attacker: attackingModel,
+        defender: defendingModel,
+        wounds: phase.handle()
+      });
+    }
+  }
+
+  console.log(results);
+
   return (
     <div>
       <input type="file" onChange={(e) => {
@@ -32,19 +49,38 @@ const App: React.FC = () => {
         fileChangeHandler(e.target.files, false)
       }} />
 
-      <h3>Attackers</h3>
-      {attackers.map(_a => {
-        return <div>
-          {_a.name}
-        </div>
-      })}
+      {results && (
+        <table>
+          <thead>
+            <tr>
+              <th>Attacker</th>
+              <th>Defender</th>
+              <th>Wounds</th>
+            </tr>
+          </thead>
+          <tbody>
+            {results.sort((itemA: any, itemB: any) => {
+              if(itemA.wounds > itemB.wounds) return -1;
+              if(itemA.wounds < itemB.wounds) return 1;
+              return 0;
+            }).map((result: any, index: number) => {
+              return <tr key={index}>
+                <td>
+                  {result.attacker.name}
+                </td>
 
-      <h3>Defenders</h3>
-      {defenders.map(_a => {
-        return <div>
-          {_a.name}
-        </div>
-      })}
+                <td>
+                  {result.defender.name}
+                </td>
+
+                <td>
+                  {result.wounds}
+                </td>
+              </tr>
+            })}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }

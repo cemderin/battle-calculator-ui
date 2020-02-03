@@ -2,12 +2,23 @@ import React, { useState } from 'react';
 import { createGlobalStyle } from 'styled-components'
 import UIHeader from './Header';
 import Phase from '@cemderin/battle-calculator';
+import { Reset } from 'styled-reset'
+import styled from 'styled-components';
+
+const StyledUI = styled.div`
+    // padding: 1em;
+`
 
 const GlobalStyle = createGlobalStyle`
   body {
-    margin: 0;
-    padding: 0;
+    font-family: sans-serif;
   }
+`
+
+const StyledTable = styled.table`
+    td, th {
+        padding: 0.25em;
+    }
 `
 
 const UI: React.FC = (props: any) => {
@@ -33,7 +44,8 @@ const UI: React.FC = (props: any) => {
 
         return results;
     };
-    return <React.Fragment>
+    return <StyledUI>
+        <Reset />
         <GlobalStyle />
         <UIHeader />
 
@@ -41,7 +53,7 @@ const UI: React.FC = (props: any) => {
             <React.Fragment>
 
 
-                <table>
+                <StyledTable>
                     <thead>
                         <tr>
                             <th>
@@ -73,13 +85,13 @@ const UI: React.FC = (props: any) => {
                     </thead>
 
                     {attackerIndex >= 0 && defenderIndex >= 0 && (
-                        <React.Fragment>
+                        <tbody>
                             {calc().sort((resultA: any, resultB: any) => {
                                 if(resultA.result < resultB.result) return 1;
                                 if(resultA.result > resultB.result) return -1;
                                 return 0;
-                            }).map((result: any) => {
-                                return <tr>
+                            }).map((result: any, index: number) => {
+                                return <tr key={index}>
                                     <td>
                                         {result.attacker}
                                     </td>
@@ -91,13 +103,13 @@ const UI: React.FC = (props: any) => {
                                     </td>
                                 </tr>
                             })}
-                        </React.Fragment>
+                        </tbody>
                     )}
 
-                </table>
+                </StyledTable>
             </React.Fragment>
         )}
-    </React.Fragment>
+    </StyledUI>
 }
 
 export default UI;

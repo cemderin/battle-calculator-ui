@@ -1,10 +1,19 @@
 import React from 'react';
 import BSString from '@cemderin/battlescribe-to-json/dist/src/BSString';
+import styled from 'styled-components';
+
+const StyledHeader = styled.header`
+    padding: 1em;
+    background-color: #103045;
+    color: #fff;
+    font-weight: bold;
+    display:flex;
+
+
+`
 
 const UIHeader: React.FC = (props: any) => {
-    console.log(props.factions);
     const loadData = () => {
-        // fetch data from github: https://api.github.com/repos/BSData/wh40k-killteam/contents
         fetch('https://api.github.com/repos/BSData/wh40k-killteam/contents').then((result: any) => {
             return result.json();
         }).then((result: any) => {
@@ -49,8 +58,8 @@ const UIHeader: React.FC = (props: any) => {
         props.setFactions([]);
     }
 
-    return <header>
-        <h1>Battle Calculator</h1>
+    return <StyledHeader>
+        <h1>battle calculator</h1>
 
         {props.factions.length <= 0 && (
             <button onClick={loadData}>Load data</button>
@@ -59,7 +68,7 @@ const UIHeader: React.FC = (props: any) => {
         {props.factions.length > 0 && (
             <button onClick={reset}>Reset</button>
         )}
-    </header>
+    </StyledHeader>
 }
 
 export default UIHeader;

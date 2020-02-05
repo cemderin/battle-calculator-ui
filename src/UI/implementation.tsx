@@ -1,19 +1,10 @@
 import React from 'react';
 import { Base, BaseBody } from '@cemderin/react-base-element';
-import { Reset } from 'styled-reset'
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import UIHeader from './Header';
 import { dimensions } from '../styles';
 
-const GlobalStyle = createGlobalStyle` 
-  body {
-    // https://colorhunt.co/palette/2763
-    @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-    font-family: 'Montserrat', sans-serif;
-    background-color: #393e46;
-    color: #eeeeee;
-  }
-`
+// https://colorhunt.co/palette/2763
 
 const StyledUI = styled(Base)`
 `
@@ -24,9 +15,6 @@ const StyledBaseBody = styled(BaseBody)`
 
 const UI: React.FC = (props: any) => {
     return <React.Fragment>
-        <Reset />
-        <GlobalStyle />
-
         <StyledUI>
             <UIHeader />
             <StyledBaseBody>
@@ -82,7 +70,7 @@ const UI: React.FC = (props: any) => {
                     </React.Fragment>
                 )}
             </StyledBaseBody>
-            
+
         </StyledUI>
     </React.Fragment>
 }

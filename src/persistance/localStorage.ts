@@ -1,5 +1,8 @@
 const defaultState = {
-    factions: []
+    factions: [],
+    attacker: null,
+    defender: null,
+    results: null
 }
 
 const getInitialState = function () {

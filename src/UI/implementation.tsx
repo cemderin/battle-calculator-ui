@@ -1,115 +1,89 @@
-import React, { useState } from 'react';
-import { createGlobalStyle } from 'styled-components'
-import UIHeader from './Header';
-import Phase from '@cemderin/battle-calculator';
+import React from 'react';
+import { Base, BaseBody } from '@cemderin/react-base-element';
 import { Reset } from 'styled-reset'
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+import UIHeader from './Header';
+import { dimensions } from '../styles';
 
-const StyledUI = styled.div`
-    // padding: 1em;
-`
-
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle` 
   body {
-    font-family: sans-serif;
+    // https://colorhunt.co/palette/2763
+    @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+    font-family: 'Montserrat', sans-serif;
+    background-color: #393e46;
+    color: #eeeeee;
   }
 `
 
-const StyledTable = styled.table`
-    td, th {
-        padding: 0.25em;
-    }
+const StyledUI = styled(Base)`
+`
+
+const StyledBaseBody = styled(BaseBody)`
+  padding: ${dimensions.default}em;
 `
 
 const UI: React.FC = (props: any) => {
-    const [attackerIndex, setAttackerIndex] = useState(-1);
-    const [defenderIndex, setDefenderIndex] = useState(-1);
-
-    const calc = () => {
-        let results: Array<any> = [];
-
-        for(let attacker of props.factions[attackerIndex].models) {
-            for(let defender of props.factions[defenderIndex].models) {
-                const phase = new Phase();
-                phase.attacker = attacker;
-                phase.defender = defender;
-
-                results.push({
-                    attacker: attacker.name,
-                    defender: defender.name,
-                    result: phase.handle()
-                });
-            }
-        }
-
-        return results;
-    };
-    return <StyledUI>
+    return <React.Fragment>
         <Reset />
         <GlobalStyle />
-        <UIHeader />
 
-        {props.factions.length > 0 && (
-            <React.Fragment>
-
-
-                <StyledTable>
-                    <thead>
-                        <tr>
-                            <th>
-                                Attacker
-                                <select onChange={(e: any) => {
-                                    setAttackerIndex(e.target.value)
-                                }}>
-                                    <option value={-1}>Select</option>
-                                    {props.factions.map((faction: any, index: number) => {
-                                        return <option key={index} value={index}>{faction.name}</option>
-                                    })}
-                                </select>
-                            </th>
-                            <th>
-                                Defender
-                                <select onChange={(e: any) => {
-                                    setDefenderIndex(e.target.value)
-                                }}>
-                                    <option value={-1}>Select</option>
-                                    {props.factions.map((faction: any, index: number) => {
-                                        return <option key={index} value={index}>{faction.name}</option>
-                                    })}
-                                </select>
-                            </th>
-                            <th>
-                                Wounds caused
-                            </th>
-                        </tr>
-                    </thead>
-
-                    {attackerIndex >= 0 && defenderIndex >= 0 && (
-                        <tbody>
-                            {calc().sort((resultA: any, resultB: any) => {
-                                if(resultA.result < resultB.result) return 1;
-                                if(resultA.result > resultB.result) return -1;
-                                return 0;
-                            }).map((result: any, index: number) => {
-                                return <tr key={index}>
-                                    <td>
-                                        {result.attacker}
-                                    </td>
-                                    <td>
-                                        {result.defender}
-                                    </td>
-                                    <td>
-                                        {result.result}
-                                    </td>
-                                </tr>
+        <StyledUI>
+            <UIHeader />
+            <StyledBaseBody>
+                {props.factions.length > 0 && (
+                    <React.Fragment>
+                        <select defaultValue={props.attacker} onChange={(e) => {
+                            props.setAttacker(e.target.value);
+                        }}>
+                            <option value="-1">Select</option>
+                            {props.factions.map((faction: any, index: number) => {
+                                return <option key={index} value={index}>
+                                    {faction.name}
+                                </option>
                             })}
-                        </tbody>
-                    )}
+                        </select>
 
-                </StyledTable>
-            </React.Fragment>
-        )}
-    </StyledUI>
+                        <select defaultValue={props.defender} onChange={(e) => {
+                            props.setDefender(e.target.value);
+                        }}>
+                            <option value="-1">Select</option>
+                            {props.factions.map((faction: any, index: number) => {
+                                return <option key={index} value={index}>
+                                    {faction.name}
+                                </option>
+                            })}
+                        </select>
+
+                        {props.results && props.results.length > 0 && (
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Attacker</th>
+                                        <th>Defender</th>
+                                        <th>Wounds caused</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {props.results.sort((a: any, b: any) => {
+                                        if (a.result > b.result) return -1;
+                                        if (a.result < b.result) return 1;
+                                        return 0;
+                                    }).map((result: any, index: number) => {
+                                        return <tr key={index}>
+                                            <td>{result.attacker}</td>
+                                            <td>{result.defender}</td>
+                                            <td>{result.result}</td>
+                                        </tr>
+                                    })}
+                                </tbody>
+                            </table>
+                        )}
+                    </React.Fragment>
+                )}
+            </StyledBaseBody>
+        </StyledUI>
+    </React.Fragment>
 }
 
 export default UI;

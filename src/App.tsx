@@ -1,16 +1,8 @@
 import React from 'react';
 import { Provider as ReduxProvider } from "react-redux";
-import UI from './UI';
+import UI from './UI'; 
+import reduxStore from './store/store';
 
- // app state
-import configureStore from "./store/store";
-import persistance from './persistance/localStorage';
-const reduxStore = configureStore(persistance.getInitialState());
-reduxStore.subscribe(() => {
-    persistance.saveState(reduxStore.getState());
-});
-
-// app component
 const App: React.FC = () => {
 
   return (

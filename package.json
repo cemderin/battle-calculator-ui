@@ -1,10 +1,11 @@
 {
   "name": "battle-calculator-ui",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@cemderin/battle-calculator": "^0.0.5",
     "@cemderin/battlescribe-to-json": "^0.0.1",
+    "@cemderin/react-base-element": "^0.0.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -30,7 +31,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "release": "npx standard-version"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,5 +53,13 @@
     "@types/xml2json": "^0.11.0",
     "git-cz": "^4.2.0",
     "standard-version": "^7.1.0"
+  },
+  "standard-version": {
+    "bumpFiles": [
+      {
+        "filename": "src/version.json",
+        "type": "json"
+      }
+    ]
   }
 }

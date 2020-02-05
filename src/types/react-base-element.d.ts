@@ -1,0 +1,1 @@
+declare module '@cemderin/react-base-element';

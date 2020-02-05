@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/cemderin/battle-calculator-ui/compare/v0.0.1...v0.0.2) (2020-02-05)
+
+
+### Bug Fixes
+
+* 🐛 Fix missing global styles ([1c07f1b](https://github.com/cemderin/battle-calculator-ui/commit/1c07f1b05482fb418a06efd82d31665ae18895ad))
+
 ### 0.0.1 (2020-02-05)
 
 

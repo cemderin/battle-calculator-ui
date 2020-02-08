@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Implementation from './implementation';
-import { setAttacker, setDefender } from '../store/actions';
+import { setAttacker, setDefender } from '../../../store/actions';
 
 const mapStateToProps = (state: any) => ({
   factions: state.factions,
@@ -14,11 +14,7 @@ const mapDispatchToProps = (dispatch: any) => ({
   setDefender: (defender: number) => dispatch(setDefender(defender))
 });
 
-type UIProps = {
-  body?: any
-}
-
-export default connect<{}, {}, UIProps>(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Implementation);

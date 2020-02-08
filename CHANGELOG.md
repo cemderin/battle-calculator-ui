@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/cemderin/battle-calculator-ui/compare/v0.0.2...v0.0.3) (2020-02-08)
+
+
+### Features
+
+* 🎸 Add data management screen and clear cache button ([d2692fd](https://github.com/cemderin/battle-calculator-ui/commit/d2692fdb1efa7a6bfd7e677c096cc57e4680fde4))
+* 🎸 Add home screen ([e3c09c1](https://github.com/cemderin/battle-calculator-ui/commit/e3c09c15ebe20b3399e1f9ede0d3cdd948c90ec7))
+
 ### [0.0.2](https://github.com/cemderin/battle-calculator-ui/compare/v0.0.1...v0.0.2) (2020-02-05)
 
 

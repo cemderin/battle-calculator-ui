@@ -1,11 +1,12 @@
 {
   "name": "battle-calculator-ui",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": true,
   "dependencies": {
     "@cemderin/battle-calculator": "^0.0.5",
     "@cemderin/battlescribe-to-json": "^0.0.1",
     "@cemderin/react-base-element": "^0.0.5",
+    "@cemderin/react-collapsable-menu": "^0.0.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -14,12 +15,15 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.7",
+    "@types/react-router-dom": "^5.1.3",
     "@types/redux": "^3.6.0",
     "@types/styled-components": "^4.4.2",
     "@types/xml2js": "^0.4.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-markdown": "^4.3.1",
     "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
     "redux": "^4.0.5",
     "styled-components": "^4.4.1",
@@ -52,13 +56,5 @@
     "@types/xml2json": "^0.11.0",
     "git-cz": "^4.2.0",
     "standard-version": "^7.1.0"
-  },
-  "standard-version": {
-    "bumpFiles": [
-      {
-        "filename": "src/version.json",
-        "type": "json"
-      }
-    ]
   }
 }

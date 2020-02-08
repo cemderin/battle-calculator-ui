@@ -2,10 +2,7 @@ import React from 'react';
 import { BaseHeader } from '@cemderin/react-base-element';
 import styled from 'styled-components';
 import { dimensions } from '../../styles';
-import Button from '../Button';
-import resetStore from '../../logic/reset-store';
-import loadData from '../../logic/load-data';
-import version from '../../version.json';
+import packageJson from '../../../package.json';
 import { Menu, Item } from '@cemderin/react-collapsable-menu';
 import { Link, withRouter } from 'react-router-dom';
 
@@ -34,7 +31,7 @@ const StyledItem = styled(Item)`
     padding:0;
 
     ${props => (props: any) => {
-        if(props.active) return `
+        if (props.active) return `
             font-weight: bold;
             text-decoration: none;
         `;
@@ -63,13 +60,6 @@ const StyledH1 = styled.h1`
 `
 
 const UIHeader: React.FC = (props: any) => {
-    const reset = () => {
-        resetStore();
-    }
-
-    const load = () => {
-        loadData();
-    }
 
     const menuItems = [
         {
@@ -88,18 +78,16 @@ const UIHeader: React.FC = (props: any) => {
 
     return <StyledUIHeader>
         <div>
-            <StyledH1><Link to="/">battle calculator <small>{version.version}</small></Link></StyledH1>
+            <StyledH1><Link to="/">battle calculator <small>{packageJson.version}</small></Link></StyledH1>
         </div>
         <RightHeader>
-            {false && props.factions.length <= 0 && <Button onClick={load}>Load Data</Button>}
-            {false && props.factions.length > 0 && <Button onClick={reset}>Reset</Button>}
-            {props.factions.length > 0 && <StyledMenu>
+            <StyledMenu>
                 {menuItems.map((menuItem: any, index: number) => {
                     return <StyledItem active={props.location.pathname === menuItem.route} key={index}><Link to={menuItem.route}>{menuItem.label}</Link></StyledItem>
                 })}
-            </StyledMenu>}
+            </StyledMenu>
         </RightHeader>
-    </StyledUIHeader> 
+    </StyledUIHeader>
 }
 
 export default withRouter(UIHeader);

@@ -1,6 +1,6 @@
 {
   "name": "battle-calculator-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "dependencies": {
     "@cemderin/battle-calculator": "^0.0.5",
@@ -56,13 +56,5 @@
     "@types/xml2json": "^0.11.0",
     "git-cz": "^4.2.0",
     "standard-version": "^7.1.0"
-  },
-  "standard-version": {
-    "bumpFiles": [
-      {
-        "filename": "src/version.json",
-        "type": "json"
-      }
-    ]
   }
 }

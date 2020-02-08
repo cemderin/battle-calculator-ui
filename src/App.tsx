@@ -6,6 +6,7 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ScreenManageData from './UI/Screen/ManageData';
 import UIScreenResults from './UI/Screen/Results';
+import UIScreenHome from './UI/Screen/Home';
 
 const App: React.FC = () => {
   return (
@@ -19,7 +20,7 @@ const App: React.FC = () => {
             <UI body={(<UIScreenResults />)} />
           </Route>
           <Route path="/">
-            <UI />
+            <UI body={(<UIScreenHome />)}/>
           </Route>
         </Switch>
       </BrowserRouter>

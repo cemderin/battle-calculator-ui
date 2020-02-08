@@ -5,6 +5,7 @@ import reduxStore from './store/store';
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ScreenManageData from './UI/Screen/ManageData';
+import UIScreenResults from './UI/Screen/Results';
 
 const App: React.FC = () => {
   return (
@@ -13,6 +14,9 @@ const App: React.FC = () => {
         <Switch>
           <Route path="/manage-data">
             <UI body={(<ScreenManageData />)} />
+          </Route>
+          <Route path="/results">
+            <UI body={(<UIScreenResults />)} />
           </Route>
           <Route path="/">
             <UI />

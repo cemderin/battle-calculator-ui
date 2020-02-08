@@ -73,8 +73,12 @@ const UIHeader: React.FC = (props: any) => {
 
     const menuItems = [
         {
+            label: "Home",
+            route: "/",
+        },
+        {
             label: "Results",
-            route: "/"
+            route: "/results"
         },
         {
             label: "Manage Data",

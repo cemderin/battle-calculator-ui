@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { dimensions } from '../../styles';
 
 const UICopy = styled.div`
+    line-height: 1.25em;
+    
     h1, h2, h3, h4, h5 {
         font-weight: bold;
     }

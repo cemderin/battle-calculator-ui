@@ -18,8 +18,13 @@ const saveState = function(state: any) {
     localStorage.setItem('bcui-data', JSON.stringify(state)); 
 }
 
+const clearCache = function() {
+    localStorage.removeItem('bcui-data'); 
+}
+
 export default {
     defaultState,
     getInitialState,
-    saveState
+    saveState,
+    clearCache
 };

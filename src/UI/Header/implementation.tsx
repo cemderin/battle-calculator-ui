@@ -6,6 +6,8 @@ import Button from '../Button';
 import resetStore from '../../logic/reset-store';
 import loadData from '../../logic/load-data';
 import version from '../../version.json';
+import { Menu, Item } from '@cemderin/react-collapsable-menu';
+import { Link, withRouter } from 'react-router-dom';
 
 const StyledUIHeader = styled(BaseHeader)`
     background-color: #222831;
@@ -27,6 +29,39 @@ const RightHeader = styled.div`
     text-align: right;
 `
 
+const StyledItem = styled(Item)`
+    margin:0 0.5em;
+    padding:0;
+
+    ${props => (props: any) => {
+        if(props.active) return `
+            font-weight: bold;
+            text-decoration: none;
+        `;
+    }}
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+`
+
+const StyledMenu = styled(Menu)`
+    margin-left: 1em;
+    font-size: 0.75em;
+    line-height: 1.25em;
+`
+
+const StyledH1 = styled.h1`
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    
+
+
+`
+
 const UIHeader: React.FC = (props: any) => {
     const reset = () => {
         resetStore();
@@ -36,15 +71,31 @@ const UIHeader: React.FC = (props: any) => {
         loadData();
     }
 
+    const menuItems = [
+        {
+            label: "Results",
+            route: "/"
+        },
+        {
+            label: "Manage Data",
+            route: "/manage-data"
+        }
+    ];
+
     return <StyledUIHeader>
         <div>
-            <h1>battle calculator <small>{version.version}</small></h1>
+            <StyledH1><Link to="/">battle calculator <small>{version.version}</small></Link></StyledH1>
         </div>
         <RightHeader>
-            {props.factions.length <= 0 && <Button onClick={load}>Load Data</Button>}
-            {props.factions.length > 0 && <Button onClick={reset}>Reset</Button>}
+            {false && props.factions.length <= 0 && <Button onClick={load}>Load Data</Button>}
+            {false && props.factions.length > 0 && <Button onClick={reset}>Reset</Button>}
+            {props.factions.length > 0 && <StyledMenu>
+                {menuItems.map((menuItem: any, index: number) => {
+                    return <StyledItem active={props.location.pathname === menuItem.route} key={index}><Link to={menuItem.route}>{menuItem.label}</Link></StyledItem>
+                })}
+            </StyledMenu>}
         </RightHeader>
     </StyledUIHeader> 
 }
 
-export default UIHeader;
+export default withRouter(UIHeader);

@@ -14,7 +14,11 @@ const mapDispatchToProps = (dispatch: any) => ({
   setDefender: (defender: number) => dispatch(setDefender(defender))
 });
 
-export default connect(
+type UIProps = {
+  body?: any
+}
+
+export default connect<{}, {}, UIProps>(
   mapStateToProps,
   mapDispatchToProps
 )(Implementation);

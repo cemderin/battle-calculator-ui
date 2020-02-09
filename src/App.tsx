@@ -4,9 +4,10 @@ import UI from './UI';
 import reduxStore from './store/store';
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import ScreenManageData from './UI/Screen/ManageData';
+import UIScreenManageData from './UI/Screen/ManageData';
 import UIScreenResults from './UI/Screen/Results';
 import UIScreenHome from './UI/Screen/Home';
+import UISCreenLists from './UI/Screen/Lists';
 
 const App: React.FC = () => {
   return (
@@ -14,13 +15,16 @@ const App: React.FC = () => {
       <BrowserRouter>
         <Switch>
           <Route path="/manage-data">
-            <UI body={(<ScreenManageData />)} />
+            <UI body={(<UIScreenManageData />)} />
+          </Route>
+          <Route path="/lists">
+            <UI body={(<UISCreenLists />)} />
           </Route>
           <Route path="/results">
             <UI body={(<UIScreenResults />)} />
           </Route>
           <Route path="/">
-            <UI body={(<UIScreenHome />)}/>
+            <UI body={(<UIScreenHome />)} />
           </Route>
         </Switch>
       </BrowserRouter>

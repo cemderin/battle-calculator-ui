@@ -71,6 +71,10 @@ const UIHeader: React.FC = (props: any) => {
             route: "/results"
         },
         {
+            label: "Lists",
+            route: "/lists"
+        },
+        {
             label: "Manage Data",
             route: "/manage-data"
         }
@@ -83,7 +87,10 @@ const UIHeader: React.FC = (props: any) => {
         <RightHeader>
             <StyledMenu>
                 {menuItems.map((menuItem: any, index: number) => {
-                    return <StyledItem active={props.location.pathname === menuItem.route} key={index}><Link to={menuItem.route}>{menuItem.label}</Link></StyledItem>
+                    return <StyledItem active={
+                        (menuItem.route.length === 1 && props.location.pathname === menuItem.route) ||
+                        (menuItem.route.length > 1 && props.location.pathname.substring(0, menuItem.route.length) === menuItem.route)
+                    } key={index}><Link to={menuItem.route}>{menuItem.label}</Link></StyledItem>
                 })}
             </StyledMenu>
         </RightHeader>

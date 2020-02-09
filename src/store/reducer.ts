@@ -31,6 +31,27 @@ const reducer = (_state: any = defaultState, action: any) => {
             let newState = Object.assign({}, state, { results: action.payload.results });
             return newState;
         }
+
+        case Types.ADD_LIST: {
+            let lists: Array<any> = [];
+            if(Array.isArray(state.lists)) lists = [...state.lists];
+
+            lists.push(action.payload.list);
+            let newState = Object.assign({}, state, { lists });
+            return newState;
+        }
+
+        case Types.DELETE_LIST: {
+            let lists: Array<any> = [];
+            if(Array.isArray(state.lists)) lists = [...state.lists];
+            lists = lists.filter((list: any, index: number) => {
+                if(index === action.payload.listIndex) return false;
+                return true;
+            });
+
+            let newState = Object.assign({}, state, { lists });
+            return newState;
+        }
     }
 
     return state;

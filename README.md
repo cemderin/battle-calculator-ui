@@ -1,7 +1,7 @@
 # battle-calculator-ui
 [![Netlify Status](https://api.netlify.com/api/v1/badges/aa6fc5ff-8005-4225-8c4f-4c001fdbc679/deploy-status)](https://app.netlify.com/sites/battle-calculator-cemderin-com/deploys)
 
-User interface for battle-calculator, a Warhammer 40,000 Kill Team tool.
+User interface for battle-calculator, a Warhammer 40,000 Kill Team tool.  
 
 Live Demo: [http://battle-calculator.cemderin.com](http://battle-calculator.cemderin.com)
 

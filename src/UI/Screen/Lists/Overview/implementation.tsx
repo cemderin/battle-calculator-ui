@@ -39,7 +39,7 @@ const UISCreenListsOverview: React.FC = (props: any) => {
                         <tr>
                             <th>
                                 List
-                    </th>
+                            </th>
                             <th></th>
                         </tr>
                     </thead>
@@ -47,7 +47,7 @@ const UISCreenListsOverview: React.FC = (props: any) => {
                         {props.lists && Array.isArray(props.lists) && props.lists.map((list: any, index: number) => {
                             return <UITableRow key={index}>
                                 <td>{list.name}</td>
-                                <UITableCell right>
+                                <UITableCell>
                                     <Link to={`/lists/edit/${index}`}>
                                         <Button>Edit</Button>
                                     </Link>

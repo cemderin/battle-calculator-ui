@@ -7,11 +7,11 @@ const UISCreenLists: React.FC = (props: any) => {
     return <React.Fragment>
         <Switch>
 
-            <Route exact path="/lists/edit/:id">
+            <Route path="/lists/edit/:id">
                 <UIScreenListsEdit />
             </Route>
 
-            <Route exact path="/lists">
+            <Route path="/lists">
                 <UISCreenListsOverview />
             </Route>
         </Switch>

@@ -3,14 +3,7 @@ import UIScreen from '../..';
 import UITable, { UITableCell, UITableRow } from '../../../Table';
 import Button from '../../../Button';
 import { Link, withRouter } from 'react-router-dom';
-import { Base, BaseBody, BaseHeader } from '@cemderin/react-base-element';
-import styled from 'styled-components';
-import { dimensions } from '../../../../styles';
-
-const StyledHeader = styled(BaseHeader)`
-    background: rgba(0, 0, 0, 0.2);
-    padding: ${dimensions.default}em;
-`
+import { Base, BaseBody } from '@cemderin/react-base-element';
 
 const UISCreenListsOverview: React.FC = (props: any) => {
 
@@ -29,9 +22,6 @@ const UISCreenListsOverview: React.FC = (props: any) => {
     }
 
     return <Base>
-        <StyledHeader>
-            <Button onClick={enterAddList}>Add List</Button>
-        </StyledHeader>
         <BaseBody>
             <UIScreen>
                 <UITable>
@@ -40,7 +30,9 @@ const UISCreenListsOverview: React.FC = (props: any) => {
                             <th>
                                 List
                             </th>
-                            <th></th>
+                            <th>
+                                <Button onClick={enterAddList}>Add List</Button>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>

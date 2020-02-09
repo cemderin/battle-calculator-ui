@@ -4,7 +4,8 @@ const Types = {
     SET_DEFENDER: 'SET_DEFENDER',
     SET_RESULTS: 'SET_RESULTS',
     ADD_LIST: 'ADD_LIST',
-    DELETE_LIST: 'DELETE_LIST'
+    DELETE_LIST: 'DELETE_LIST',
+    UPDATE_LIST: 'UPDATE_LIST'
 }
 
 const setFactions = (factions: Array<any>) => ({
@@ -49,6 +50,14 @@ const deleteList = (listIndex: number) => ({
     }
 })
 
+const updateList = (listIndex: number, list: any) => ({
+    type: Types.UPDATE_LIST,
+    payload: {
+        listIndex,
+        list
+    }
+})
+
 export {
     Types as default,
     setFactions,
@@ -56,5 +65,6 @@ export {
     setDefender,
     setResults,
     addList,
-    deleteList
+    deleteList,
+    updateList
 }

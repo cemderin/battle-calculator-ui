@@ -1,10 +1,10 @@
 import React from 'react';
 import UISCreenListsOverview from './Overview';
-import { withRouter, BrowserRouter, Switch, Route } from 'react-router-dom';
+import { withRouter, Switch, Route } from 'react-router-dom';
 import UIScreenListsEdit from './Edit';
 
 const UISCreenLists: React.FC = (props: any) => {
-    return <BrowserRouter>
+    return <React.Fragment>
         <Switch>
 
             <Route exact path="/lists/edit/:id">
@@ -15,7 +15,7 @@ const UISCreenLists: React.FC = (props: any) => {
                 <UISCreenListsOverview />
             </Route>
         </Switch>
-    </BrowserRouter>
+    </React.Fragment>
 }
 
 export default withRouter(UISCreenLists);

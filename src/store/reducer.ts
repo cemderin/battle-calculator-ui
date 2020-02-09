@@ -52,6 +52,19 @@ const reducer = (_state: any = defaultState, action: any) => {
             let newState = Object.assign({}, state, { lists });
             return newState;
         }
+
+        case Types.UPDATE_LIST: {
+            let lists: Array<any> = [];
+            if(Array.isArray(state.lists)) lists = [...state.lists];
+
+            lists.map((list: any, index: number) => {
+                if(index === action.payload.listIndex) return action.payload.list;
+                return list;
+            });
+
+            let newState = Object.assign({}, state, { lists });
+            return newState;
+        }
     }
 
     return state;

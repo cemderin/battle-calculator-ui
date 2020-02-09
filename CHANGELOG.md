@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/cemderin/battle-calculator-ui/compare/v0.0.3...v0.0.4) (2020-02-09)
+
+
+### Bug Fixes
+
+* 🐛 Fix overlappinng buttons ([d65482f](https://github.com/cemderin/battle-calculator-ui/commit/d65482fbecd69502b440f03fdf3c0c74d97520a0)), closes [#3](https://github.com/cemderin/battle-calculator-ui/issues/3)
+* 🐛 Route all requests to index file ([dce1453](https://github.com/cemderin/battle-calculator-ui/commit/dce14536cfaf4a3e1c78ac59f0fb684ba3167b29)), closes [#4](https://github.com/cemderin/battle-calculator-ui/issues/4)
+
 ### [0.0.3](https://github.com/cemderin/battle-calculator-ui/compare/v0.0.2...v0.0.3) (2020-02-08)
 
 

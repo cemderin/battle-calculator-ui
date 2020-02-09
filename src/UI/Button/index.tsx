@@ -12,10 +12,8 @@ const StyledButton = styled.button`
     margin:0;
 
     padding: ${dimensions.default/4}em ${dimensions.default/2}em;
-    margin: 0 ${dimensions.default/2}em;
+    margin: ${dimensions.default/4}em ${dimensions.default/2}em;
     background-color: #00adb5;
-    margin-top: -${dimensions.default}em;
-    margin-bottom: -${dimensions.default}em;
     color: #222831;
     cursor: pointer;
     border: 1px solid transparent;

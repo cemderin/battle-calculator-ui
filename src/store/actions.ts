@@ -5,7 +5,8 @@ const Types = {
     SET_RESULTS: 'SET_RESULTS',
     ADD_LIST: 'ADD_LIST',
     DELETE_LIST: 'DELETE_LIST',
-    UPDATE_LIST: 'UPDATE_LIST'
+    UPDATE_LIST: 'UPDATE_LIST',
+    SET_LISTS: 'SET_LISTS'
 }
 
 const setFactions = (factions: Array<any>) => ({
@@ -58,6 +59,13 @@ const updateList = (listIndex: number, list: any) => ({
     }
 })
 
+const setLists = (lists: Array<any>) => ({
+    type: Types.SET_LISTS,
+    payload: {
+        lists
+    }
+})
+
 export {
     Types as default,
     setFactions,
@@ -66,5 +74,6 @@ export {
     setResults,
     addList,
     deleteList,
-    updateList
+    updateList,
+    setLists
 }

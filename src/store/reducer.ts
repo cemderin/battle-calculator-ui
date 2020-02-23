@@ -65,6 +65,12 @@ const reducer = (_state: any = defaultState, action: any) => {
             let newState = Object.assign({}, state, { lists });
             return newState;
         }
+
+        case Types.SET_LISTS: {
+            console.log(action);
+            let newState = Object.assign({}, state, { lists: action.payload.lists });
+            return newState;
+        }
     }
 
     return state;

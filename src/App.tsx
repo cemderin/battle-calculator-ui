@@ -11,7 +11,7 @@ import UISCreenLists from './UI/Screen/Lists';
 
 const App: React.FC = () => {
   return (
-    <ReduxProvider store={reduxStore}>
+    <ReduxProvider store={reduxStore}> 
       <BrowserRouter>
         <Switch>
           <Route path="/manage-data">
@@ -24,7 +24,7 @@ const App: React.FC = () => {
             <UI body={(<UIScreenResults />)} />
           </Route>
           <Route path="/">
-            <UI body={(<UIScreenHome />)} />
+            <UI body={(<UIScreenHome />)} /> 
           </Route>
         </Switch>
       </BrowserRouter>

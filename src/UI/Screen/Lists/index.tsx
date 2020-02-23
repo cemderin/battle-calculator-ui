@@ -1,21 +1,17 @@
-import React from 'react';
-import UISCreenListsOverview from './Overview';
-import { withRouter, Switch, Route } from 'react-router-dom';
-import UIScreenListsEdit from './Edit';
+import { connect } from 'react-redux';
+import Implementation from './implementation';
+import { setLists, deleteList } from '../../../store/actions';
 
-const UISCreenLists: React.FC = (props: any) => {
-    return <React.Fragment>
-        <Switch>
+const mapStateToProps = (state: any) => ({
+    lists: state.lists
+});
 
-            <Route path="/lists/edit/:id">
-                <UIScreenListsEdit />
-            </Route>
+const mapDispatchToProps = (dispatch: any) => ({
+  setLists: (lists: Array<any>) => dispatch(setLists(lists)),
+  deleteList: (listIndex: number) => dispatch(deleteList(listIndex))
+});
 
-            <Route path="/lists">
-                <UISCreenListsOverview />
-            </Route>
-        </Switch>
-    </React.Fragment>
-}
-
-export default withRouter(UISCreenLists);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Implementation);

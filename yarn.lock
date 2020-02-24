@@ -908,10 +908,10 @@
   resolved "https://registry.yarnpkg.com/@cemderin/react-collapsable-menu/-/react-collapsable-menu-0.0.1.tgz#b5bf9716d5c74ea338c5974058ad081503e4b36f"
   integrity sha512-7hVc7zJEwPFC8zx1uZSZ6QDGChLC7FsxorjphZDYLldeGLVlPy/BkBI1jqdL0FQfj2R40G64OIVJVqsmDKcgQg==
 
-"@cemderin/react-data-editor@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@cemderin/react-data-editor/-/react-data-editor-0.1.1.tgz#ecaa1b6ff3fd112ca35e25c1b8555dc4f06ac2d8"
-  integrity sha512-p9rqaH6QCBdmhqigvqUHWCqlzkyYXDm3BLFEJSvxMf69W1m699svcLVbY2Nv88dUf9dwaA/pagpl+/e7HuzfRA==
+"@cemderin/react-data-editor@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@cemderin/react-data-editor/-/react-data-editor-0.1.2.tgz#6a22a0cf2a4bd299ed383f4dd0b35912024cade9"
+  integrity sha512-SNa3v5O8mPCnflDQVCBIXu61QjIVnB2a4LMeBH6UoCJJiw5SP8G7ck7tlB7uXKPCNNeqvNppderd89gvNzg9vw==
   dependencies:
     "@emotion/core" "^10.0.27"
     "@emotion/styled" "^10.0.27"

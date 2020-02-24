@@ -7,7 +7,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import UIScreenManageData from './UI/Screen/ManageData';
 import UIScreenResults from './UI/Screen/Results';
 import UIScreenHome from './UI/Screen/Home';
-import UISCreenLists from './UI/Screen/Lists';
 
 const App: React.FC = () => {
   return (
@@ -16,9 +15,6 @@ const App: React.FC = () => {
         <Switch>
           <Route path="/manage-data">
             <UI body={(<UIScreenManageData />)} />
-          </Route>
-          <Route path="/lists">
-            <UI body={(<UISCreenLists />)} />
           </Route>
           <Route path="/results">
             <UI body={(<UIScreenResults />)} />

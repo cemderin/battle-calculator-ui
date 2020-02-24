@@ -7,7 +7,7 @@
     "@cemderin/battlescribe-to-json": "^0.0.1",
     "@cemderin/react-base-element": "^0.0.5",
     "@cemderin/react-collapsable-menu": "^0.0.1",
-    "@cemderin/react-data-editor": "^0.1.1",
+    "@cemderin/react-data-editor": "^0.1.2",
     "@emotion/styled": "^10.0.27",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

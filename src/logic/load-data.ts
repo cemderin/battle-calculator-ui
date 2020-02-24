@@ -28,6 +28,7 @@ export default function loadData() {
                 return parser.load().then(() => {
                     try {
                         const models = parser.extractModels();
+                        delete(faction.download_url_response);
                         return faction.models = models;
                     } catch (e) {
                         return faction

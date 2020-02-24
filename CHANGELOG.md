@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/cemderin/battle-calculator-ui/compare/v0.0.4...v0.0.5) (2020-02-24)
+
+
+### Features
+
+* 🎸 Add faction editor ([978e149](https://github.com/cemderin/battle-calculator-ui/commit/978e149f21feaa6fca6a5d2789526080ade7bb2c)), closes [#6](https://github.com/cemderin/battle-calculator-ui/issues/6)
+* 🎸 Add list editor ([9cce52b](https://github.com/cemderin/battle-calculator-ui/commit/9cce52b81a89ec5b642760f230f924c0e6d22123))
+
+
+### Bug Fixes
+
+* 🐛 Fix data loss after reload ([2866c17](https://github.com/cemderin/battle-calculator-ui/commit/2866c173cce3d0928ad332c60ea1446cb3d256b9)), closes [#5](https://github.com/cemderin/battle-calculator-ui/issues/5)
+
 ### [0.0.4](https://github.com/cemderin/battle-calculator-ui/compare/v0.0.3...v0.0.4) (2020-02-09)
 
 

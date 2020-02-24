@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import UIScreen from '..';
 import ReactMarkdown from 'react-markdown';
 import UICopy from '../../Copy';
+import { withRouter } from 'react-router-dom';
 
 const UIScreenHome: React.FC = () => {
     const [content, setContent] = useState('');
@@ -32,4 +33,4 @@ const UIScreenHome: React.FC = () => {
     </UIScreen>
 }
 
-export default UIScreenHome;
+export default withRouter(UIScreenHome);

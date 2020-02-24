@@ -85,10 +85,6 @@ const UIHeader: React.FC = (props: any) => {
             route: "/results"
         },
         {
-            label: "Lists",
-            route: "/lists"
-        },
-        {
             label: "Manage Data",
             route: "/manage-data"
         }
